@@ -6,32 +6,33 @@ interface HeadingrProps {
         heading: string;
         subText?: string;
     },
+    id?: string;
     className?: string;
     children?: React.ReactNode;
 }
 
-export function Heading({data, className, children}: Readonly<HeadingrProps>) {
+export function Heading({data, className, children, id}: Readonly<HeadingrProps>) {
     if(!data) return null;
     const {preHeading, heading, subText} = data;
   return (
-    <section className={`mb-10 ${className ? className : ""}`}>
+    <section className={`mb-10 ${className ? className : ""}`} id={id ? id : ""}>
         {preHeading && (
-            <p className="text-xs tracking-widest uppercase text-mainOtherText mb-2">
+            <p className="text-xs tracking-widest uppercase text-main-other-text mb-2">
                 {preHeading}
             </p>
         )}
-        <h1 className="text-xl sm:text-2xl tracking-widest uppercase text-mainText mb-2">
+        <h2 className="text-xl sm:text-2xl tracking-widest uppercase text-main-text mb-2">
             {heading}
-        </h1>
+        </h2>
         {subText && (
-            <h2 className="mt-4 text-mainOtherText">
+            <h3 className="mt-4 text-main-other-text">
                 {subText}
-            </h2>
+            </h3>
         )}
 
-        <div className="pl-5 text-mainText font-normal">
+        <section className="pl-5 text-main-text font-normal">
             {children}
-        </div>
+        </section>
     </section>
   );
 }

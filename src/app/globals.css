@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:where(.dark, .dark *));
+
+/**
+* Tailwind Configuration
+*/
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Purple Theme */
+  --color-main-bg: #0A0A0B;
+  --color-main-bg-secondary: #0D0D10;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-main-surface: #111114;
+  --color-main-surface-secondary: #18181C;
+
+  --color-main-primary: #EDE9FE;
+  --color-main-secondary: #C4B5FD;
+
+  --color-main-accent: #8B5CF6;
+  --color-main-accent-bright: #A78BFA;
+  --color-main-accent-dark: #7C3AED;
+  --color-main-accent-support: #22D3EE;
+
+  --color-main-text: #F5F5F5;
+  --color-main-other-text: #A1A1AA;
+  /* Green Theme */
+  /* --color-main-bg: #080B09;
+  --color-main-bg-secondary: #0B100D;
+
+  --color-main-surface: #0F1411;
+  --color-main-surface-secondary: #161D18;
+
+  --color-main-primary: #E8F5EC;
+  --color-main-secondary: #B7D8C1;
+
+  --color-main-accent: #10B981;
+  --color-main-accent-bright: #34D399;
+  --color-main-accent-dark: #059669;
+  --color-main-accent-support: #A78BFA;
+
+  --color-main-text: #F1F5F2;
+  --color-main-other-text: #9CA8A0; */
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-stock: ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-main-text);
+  background-color: var(--color-main-bg);
 }

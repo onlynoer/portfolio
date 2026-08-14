@@ -36,7 +36,7 @@ export function CodeBlock({
             onClick={handleCopy}
             className={`flex items-center space-x-2 px-2 py-1 rounded text-xs font-medium transition-colors 
               ${copied
-                ? "text-mainSuccess bg-emerald-950/30 border border-emerald-800/30"
+                ? "text-main-accent bg-emerald-950/30 border border-emerald-800/30"
                 : "text-slate-400 hover:text-slate-200 hover:bg-slate-800"
               }`}
             aria-label="Copy code to clipboard"
@@ -60,7 +60,7 @@ export function CodeBlock({
       </div>
 
       {/* Code Area */}
-      <div className="code-scrollbar p-4 max-h-[42rem] overflow-auto text-sm sm:text-base text-slate-300">
+      <div className="code-scrollbar p-4 max-h-168 overflow-auto text-sm sm:text-base text-slate-300">
         <pre>
           <code>{code}</code>
         </pre>

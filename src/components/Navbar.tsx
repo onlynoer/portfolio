@@ -5,28 +5,17 @@ async function loader() {
 
   const data = {
     id: 1,
-    title: 'Light Scattering Database (not used currently)',
-    description: 'Quick access to data related to mie scattering and other light scattering data. (not used currently)',
+    title: 'not used currently',
+    description: 'also not used currently',
     topnav: {
       id: 1,
       logoLink: {
         id: 1,
-        text: 'DRI - Light Scattering Database',
-        href: '/',
-        image: {
-          id: 1,
-          url: '/img/logo.svg',
-          alternativeText: null,
-          name: 'logo.svg'
-        }
+        text: 'Portfolio',
+        href: '/'
       },
       link: [
         { id: 1, href: '/', text: 'Home', external: false },
-        { id: 3, href: '/samples', text: 'Samples', external: false },
-        { id: 4, href: '/papers', text: 'Papers', external: false },
-        { id: 4, href: '/experimental', text: 'Experimental', external: false },
-        { id: 5, href: '/news', text: 'News', external: false },
-        { id: 2, href: '/contact', text: 'Contact', external: false }
       ]
     },
     meta: {}
@@ -46,12 +35,6 @@ interface NavbarData {
       id: number;
       text: string;
       href: string;
-      image: {
-        id: number;
-        url: string;
-        alternativeText: string | null;
-        name: string;
-      };
     };
     link: {
       id: number;
@@ -83,7 +66,7 @@ export async function Navbar() {
               <li className="mr-3 nav__item" key={index}>
                 <Link
                   href={menu.href}
-                  className="inline-block px-4 py-2 text-lg font-normal text-mainText no-underline rounded-md hover:text-mainSecondary focus:text-mainPrimary focus:bg-mainBgSecondary focus:outline-none" /* dark:text-gray-200 dark:focus:bg-gray-800 */
+                  className="inline-block px-4 py-2 text-lg font-normal text-main-text no-underline rounded-md hover:text-main-secondary focus:text-main-primary focus:bg-main-bg-secondary focus:outline-none"
                 >
                   {menu.text}
                 </Link>

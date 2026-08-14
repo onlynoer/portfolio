@@ -1,61 +1,42 @@
-import React from "react";
-import { SocialIcon, register } from "react-social-icons";
+import { SocialIcon } from "react-social-icons";
 
 import Link from "next/link";
 
-import Image from "next/image";
 import { Container } from "@/components/Container";
-import { FaGoogleScholar } from "react-icons/fa6";
 
-async function loader() {
-  const data = {
-    footer: {
-      id: 1,
-      description:
-        "A comprehensive resource in the field of light scattering. Providing light scattering sample data, mie scattering related data, research papers, and news!",
-      logoLink: {
-        id: 2,
-        text: "DRI - Light Scattering Database",
-        href: "/",
-        image: {
-          id: 1,
-          url: "/img/logo.svg",
-          alternativeText: "Light Scattering Database Logo",
-          name: "logo.svg",
-        },
-      },
-      colOneLinks: [
-        { id: 9, href: "/", text: "Home", external: false },
-        { id: 10, href: "/samples", text: "Samples", external: false },
-        { id: 11, href: "/papers", text: "Papers", external: false },
-        { id: 12, href: "/experimental", text: "Experimental", external: false },
-        { id: 13, href: "/news", text: "News", external: false },
-        { id: 14, href: "/contact", text: "Contact", external: false },
-      ],
-      colTwoLinks: [],
-      socialLinks: {
-        id: 1,
-        heading: "Related Content!",
-        socialLink: [
-          {
-            id: 14,
-            href: "https://scholar.google.com/citations?user=wQ_okK0AAAAJ&hl=en",
-            text: "google-scholar",
-            external: true,
-          },
-          {
-            id: 15,
-            href: "https://dri.edu",
-            text: "DRI",
-            external: true,
-          }
-
-        ],
-      },
+const data: FooterData = {
+  footer: {
+    id: 1,
+    description: "Portfolio of Noe Rios, a software engineer and game developer. This site contains information about my projects, skills, and experience.",
+    logoLink: {
+      id: 2,
+      text: "Portfolio",
+      href: "/",
     },
-  };
-  return data;
-}
+    colOneLinks: [
+      { id: 9, href: "/", text: "Home", external: false },
+    ],
+    colTwoLinks: [],
+    socialLinks: {
+      id: 14,
+      heading: "Related Content!",
+      socialLink: [
+        {
+          id: 15,
+          href: "https://github.com/onlynoer",
+          text: "GitHub",
+          external: true,
+        },
+        {
+          id: 15,
+          href: "https://www.linkedin.com/in/noe-rios-6855693bb",
+          text: "LinkedIn",
+          external: true,
+        },
+      ],
+    },
+  },
+};
 
 interface FooterData {
   footer: {
@@ -65,12 +46,6 @@ interface FooterData {
       id: number;
       text: string;
       href: string;
-      image: {
-        id: number;
-        url: string;
-        alternativeText: string | null;
-        name: string;
-      };
     };
     colOneLinks: {
       id: number;
@@ -111,7 +86,6 @@ function iconSelect(link: SocialLink) {
 }
 
 export async function Footer() {
-  const data = (await loader()) as FooterData;
   if (!data.footer) return null;
   const footer = data.footer;
 
@@ -123,46 +97,21 @@ export async function Footer() {
   return (
     <div className="relative">
       <Container>
-        <div className="grid max-w-screen-xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-gray-200 dark:border-trueGray-700 lg:grid-cols-5">
+        <div className="grid max-w-7xl grid-cols-1 gap-10 pt-10 mx-auto mt-5 border-t border-main-secondary lg:grid-cols-5">
           <div className="lg:col-span-2">
             <div>
               <Link
                 href={logoLink.href}
-                className="flex items-center space-x-2 text-2xl font-medium text-mainPrimary" /* dark:text-gray-100 */
+                className="flex items-center space-x-2 text-2xl font-medium text-main-primary"
               >
-                <Image
-                  src={logoLink.image.url}
-                  alt={logoLink.image.alternativeText || logoLink.image.name}
-                  width={32}
-                  height={32}
-                  className="w-8"
-                  loading="eager"
-                />
                 <span>{logoLink.text}</span>
               </Link>
             </div>
 
             {/* Description, text under the website name in footer */}
-            <div className="max-w-md mt-4 text-mainOtherText"> {/* dark:text-gray-400 */}
+            <div className="max-w-md mt-4 text-main-other-text">
               {description}
             </div>
-
-            {/* This is an image below with a link */}
-            {/* <div className="mt-5">
-              <a
-                href="https://vercel.com/?utm_source=web3templates&utm_campaign=oss"
-                target="_blank"
-                rel="noopener"
-                className="relative block w-44"
-              >
-                <Image
-                  src="/img/vercel.svg"
-                  alt="Powered by Vercel"
-                  width="212"
-                  height="44"
-                />
-              </a>
-            </div> */}
           </div>
 
           {/* Nav links in column 1*/}
@@ -173,7 +122,7 @@ export async function Footer() {
                   <Link
                     key={index}
                     href={item.href}
-                    className="w-full px-4 py-2 text-mainOtherText rounded-md hover:text-mainSecondary focus:text-mainPrimary focus:bg-mainBgSecondary focus:outline-none" /* dark:text-gray-300 dark:focus:bg-trueGray-700 */
+                    className="w-full px-4 py-2 text-main-other-text rounded-md hover:text-main-secondary focus:text-main-primary focus:bg-main-bg-secondary focus:outline-none"
                   >
                     {item.text}
                   </Link>
@@ -189,7 +138,7 @@ export async function Footer() {
                   <span
                     key={index}
                     // href={item.href}
-                    className="w-full px-4 py-2 text-mainOtherText rounded-md hover:text-mainSecondary focus:text-mainPrimary focus:bg-mainBgSecondary focus:outline-none" /* dark:text-gray-300 dark:focus:bg-trueGray-700 */
+                    className="w-full px-4 py-2 text-main-other-text rounded-md hover:text-main-secondary focus:text-main-primary focus:bg-main-bg-secondary focus:outline-none"
                   >
                     {item.text}
                   </span>
@@ -199,50 +148,24 @@ export async function Footer() {
 
           {/* Social links */}
           <div>
-            <div className="text-mainText">{socialLinks.heading}</div>
+            <div className="text-main-text">{socialLinks.heading}</div>
 
-            <div className="flex mt-5 space-x-5 text-mainOtherText"> {/* dark:text-gray-500 */}
+            <div className="flex mt-5 space-x-5 text-main-other-text">
               {socialLinks.socialLink &&
                 socialLinks.socialLink.map((item, index) => (
-                  <div key={index}>
+                  <div key={index} className="hover:scale-[1.1]">
                     <span className="sr-only">{item.text}</span>
-                    {item.text == "google-scholar" ? 
-                      <Link
-                      key={index}
-                      href={item.href}
-                      target="_blank"
-                      >
-                        <div className="text-blue-500 bg-white dark:bg-mainBgSecondary/40 rounded-full p-2">
-                        {/* <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white p-2 align-middle text-blue-500 dark:bg-mainBgSecondary/40"> */}
-                          <FaGoogleScholar size={34} />
-                        </div>
-                      </Link>
-                    : item.text == "DRI" ? 
-                      <Link
-                      key={index}
-                      href={item.href}
-                      target="_blank"
-                      >
-                        <Image
-                          src="/img/dri_logo.svg"
-                          alt="DRI Logo"
-                          width={96}
-                          height={42}
-                          className="inline-block h-12 w-auto align-middle object-contain"
-                        />
-                      </Link>
-                  : iconSelect(item)}
+                    {iconSelect(item)}
                   </div>
                 ))}
             </div>
           </div>
         </div>
 
-        <div className="my-10 text-sm text-center text-mainOtherText"> {/* dark:text-gray-400 */}
-          Copyright © 2026{new Date().getFullYear() === 2026 ? "" : `-${new Date().getFullYear()}`}. {/* Made by{" "}
-          <a href="" target="_blank" rel="noopener">
-            
-          </a> */}
+        <div className="my-10 text-sm text-center text-main-other-text">
+          Copyright © 2025{new Date().getFullYear() === 2025 ? "" : `-${new Date().getFullYear()}`}.
+          <br/>
+          All Rights Reserved
         </div>
       </Container>
     </div>

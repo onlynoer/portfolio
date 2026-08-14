@@ -17,7 +17,7 @@ export function Video({ data }: Readonly<VideoProps>) {
   
   return (
     <Container>
-      <div className="relative w-full h-[500px] max-w-4xl mx-auto overflow-hidden lg:mb-20 rounded-2xl bg-mainBgSecondary cursor-pointer bg-gradient-to-tr from-mainAccent to-mainPrimary border-mainOtherText border-2">
+      <div className="relative w-full h-125 max-w-4xl mx-auto overflow-hidden lg:mb-20 rounded-2xl bg-main-bg-secondary cursor-pointer bg-linear-to-tr from-main-accent to-main-primary border-main-other-text border-2">
         {!playVideo && (
           <button
             onClick={() => setPlayVideo(!playVideo)}

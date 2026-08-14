@@ -5,23 +5,24 @@ import "./globals.css";
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import InteractiveBackground from "@/components/interactiveBackground";
 
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "DRI - Light Scattering Database",
-  description: "DRI Light Scattering Database, a comprehensive resource for Light Scattering data and analysis. View research papers and sample data gathered.",
-  icons: "/icon.png", //icon.png as img/logo.svg doesnt work for this
+  title: "Portfolio",
+  description: "Portfolio of Noe Rios, a software engineer and game developer. This site contains information about my projects, skills, and experience.",
+  icons: "/portfolio/icon.svg", //icon.png as img/logo.svg doesnt work for this
   keywords: [
-    "light scattering", "mie scattering", "optics", "photonics", "research database", "dri", "prakash gautam", "aerosol optics"
+    "onlynoer", "portfolio",
   ],
-  authors: [{name: "Noe Rios", url: "https://onlynoer.github.io/portfolio"}, {name: "Alexander Danamidis", url: ""}],
+  authors: [{name: "Noe Rios", url: "https://onlynoer.github.io/portfolio"}],
   openGraph: {
-    title: "DRI - Light Scattering Database",
-    description: "DRI Light Scattering Database, a comprehensive resource for Light Scattering data and analysis. View research papers and sample data gathered.",
-    url: "https://lightscatter.dri.edu",
-    type: "website"
+    title: "Portfolio",
+    description: "Portfolio of Noe Rios, a software engineer and game developer. This site contains information about my projects, skills, and experience.",
+    url: "https://onlynoer.github.io/portfolio",
+    type: "website",
   }
 };
 
@@ -38,7 +39,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          <div>{children}</div>
+          <InteractiveBackground />
+          <main>
+            <div className="text-main-other-text">{children}</div>
+          </main>
           <Footer />
         </ThemeProvider>
       </body>

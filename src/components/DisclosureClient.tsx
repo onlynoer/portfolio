@@ -20,11 +20,6 @@ interface DisclosureClientProps {
     logoLink: {
       text: string;
       href: string;
-      image: {
-        url: string;
-        alternativeText: string | null;
-        name: string;
-      };
     };
     link: LinkProps[];
   };
@@ -40,25 +35,14 @@ export function DisclosureClient(props: Readonly<DisclosureClientProps>) {
         <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
           {/* LOGO and Website Name, left side */}
           <Link href={logo.href || "/"}>
-            <span className="flex items-center space-x-2 text-2xl font-medium text-mainPrimary"> {/* dark:text-gray-100 */}
-              <span>
-                <Image
-                  src={logo.image.url}
-                  alt={logo.image.alternativeText || logo.image.name}
-                  width={32}
-                  height={32}
-                  className="w-8"
-                  loading="eager"
-                  priority={true}
-                />
-              </span>
+            <span className="flex items-center space-x-2 text-2xl font-medium text-main-text">
               <span>{logo.text}</span>
             </span>
           </Link>
           {/* Pancake stack for navigation when they are on smaller devices */}
           <DisclosureButton
             aria-label="Toggle Menu"
-            className="px-2 py-1 ml-auto text-mainText rounded-md lg:hidden hover:text-mainSecondary focus:text-mainPrimary focus:bg-mainBgSecondary focus:outline-none" /* dark:text-gray-300 dark:focus:bg-trueGray-700 */
+            className="px-2 py-1 ml-auto text-main-text rounded-md lg:hidden hover:text-main-secondary focus:text-main-primary focus:bg-main-bg-secondary focus:outline-none"
           >
             <svg
               className="w-6 h-6 fill-current"
@@ -81,13 +65,13 @@ export function DisclosureClient(props: Readonly<DisclosureClientProps>) {
             </svg>
           </DisclosureButton>
           {/* Content inside that is shown when pancake is open */}
-          <DisclosurePanel className="flex flex-wrap w-full my-5 lg:hidden">
+          <DisclosurePanel className="flex flex-wrap w-full my-3 lg:hidden">
             <>
               {navigation.map((item, index) => (
                 <Link
                   key={index}
                   href={item.href}
-                  className="w-full px-4 py-2 -ml-4 text-mainText rounded-md hover:text-mainSecondary focus:text-mainPrimary focus:bg-mainBgSecondary focus:outline-none" /* dark:text-gray-300 dark:focus:bg-gray-800 */
+                  className="w-full px-4 py-2 -ml-4 text-main-text rounded-md hover:text-main-secondary focus:text-main-primary focus:bg-main-bg-secondary focus:outline-none"
                 >
                   {item.text}
                 </Link>

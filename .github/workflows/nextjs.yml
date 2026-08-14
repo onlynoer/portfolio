@@ -25,14 +25,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build and export Next.js
+      - name: Build Next.js (static export via `output: 'export'`)
         env:
           # If your site is served from onlynoer.github.io/portfolio, ensure
           # `basePath`/`assetPrefix` in next.config.js is set to '/portfolio'.
           NEXT_PUBLIC_BASE_PATH: '/portfolio'
         run: |
           npm run build
-          npm run export
 
       - name: Deploy to GitHub Pages (gh-pages branch)
         uses: peaceiris/actions-gh-pages@v4

@@ -31,6 +31,7 @@ export default function Home() {
                   </h2>
                   <p className="p-2 text-main-other-text">
                     A multiplayer online game built with Node.js, Express.js, Socket.io, and Phaser.js. Players can join a game room and compete against each other in real-time.
+                    More to come.
                   </p>
                   
                   <div className="p-2 flex flex-wrap gap-2 justify-center">

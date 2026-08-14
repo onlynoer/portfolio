@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Next.js (static export via `output: 'export'`)
+      - name: Build Next.js static export
         env:
           # If your site is served from onlynoer.github.io/portfolio, ensure
           # `basePath`/`assetPrefix` in next.config.js is set to '/portfolio'.

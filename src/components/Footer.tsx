@@ -19,7 +19,7 @@ const data: FooterData = {
     colTwoLinks: [],
     socialLinks: {
       id: 14,
-      heading: "Related Content!",
+      heading: "Contact!",
       socialLink: [
         {
           id: 15,

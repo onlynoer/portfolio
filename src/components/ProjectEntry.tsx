@@ -7,6 +7,7 @@ import { useState } from "react";
 interface ProjectImage {
   src: string;
   alt: string;
+  fit?: "cover" | "contain";
 }
 
 interface ProjectEntryProps {
@@ -50,8 +51,8 @@ export function ProjectEntry({
           src={images[activeImage].src}
           alt={images[activeImage].alt}
           fill
-          //   sizes="(min-width: 768px) 50vw, 100vw"
-          className="object-cover"
+          // sizes="(min-width: 768px) 50vw, 100vw"
+          className={images[activeImage].fit === "contain" ? "object-contain" : "object-cover"}
           loading="lazy"
         />
 

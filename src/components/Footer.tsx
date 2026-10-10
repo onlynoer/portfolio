@@ -74,13 +74,15 @@ interface SocialLink {
   external: boolean;
 }
 
-function iconSelect(link: SocialLink) {
+export function iconSelect(link: SocialLink, size?: string) {
   if (!link) return null;
   return (
     <SocialIcon
       network={link.text.toLocaleLowerCase()}
       url={link.href}
       target="_blank"
+      title={link.text}
+      style={size ? { width: size, height: size } : undefined}
     />
   );
 }
@@ -155,7 +157,7 @@ export async function Footer() {
                 socialLinks.socialLink.map((item, index) => (
                   <div key={index} className="hover:scale-[1.1]">
                     <span className="sr-only">{item.text}</span>
-                    {iconSelect(item)}
+                    {iconSelect(item, "3rem")}
                   </div>
                 ))}
             </div>

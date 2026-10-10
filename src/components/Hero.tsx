@@ -1,6 +1,29 @@
 import React from "react";
 import Link from "next/link";
 import { Container } from "@/components/Container";
+import { iconSelect } from "@/components/Footer";
+
+interface SocialLink {
+  id: number;
+  href: string;
+  text: string;
+  external: boolean;
+}
+
+const socialLinks: SocialLink[] = [
+  {
+    id: 15,
+    href: "https://github.com/onlynoer",
+    text: "GitHub",
+    external: true,
+  },
+  {
+    id: 15,
+    href: "https://www.linkedin.com/in/noe-rios-6855693bb",
+    text: "LinkedIn",
+    external: true,
+  },
+]
 
 
 export function Hero() {
@@ -15,7 +38,7 @@ export function Hero() {
             Hey! I'm Onlynoer, I love developing new things.
           </p>
 
-          <div className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row">
+          <div className="flex flex-col items-start space-y-3"> {/*sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row */}
             <Link
               href="/#projects"
               target="_self"
@@ -24,13 +47,23 @@ export function Hero() {
             >
               view my work
             </Link>
+            {/* Social/Contact Icons Should go under view my work*/}
+
+            <div className="flex items-center gap-4 text-main-other-text">
+              {socialLinks.map((link) => (
+                <div key={link.href} className="transition-transform hover:scale-[1.1]">
+                  <span className="sr-only">{link.text}</span>
+                  {iconSelect(link, "2.5rem")}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
       <div className="flex items-center justify-center w-full lg:w-1/2">
         {/* 616 616 */}
-        
+        {/* img */}
       </div>
     </Container>
   );

@@ -88,8 +88,8 @@ export default function Home() {
               <div className="flex flex-col gap-10 pt-10">
                 <ProjectEntry
                   title="DRI Light Scattering Database"
-                  description=""
-                  stack={["Next.js", "Python", "Nginx", "MySQL"]}
+                  description="A research website for the Desert Research Institute to showcase particle light-scattering data and publications. Researchers manage content through Strapi, while visitors can browse sample tables and detailed, dynamically generated sample pages. The site also includes searchable publications and an interactive Mie scattering tool: users adjust experiment parameters, Python calculations are served through FastAPI, and Plotly visualizes the results. Deployed in Docker containers on a DRI virtual server, with Nginx handling reverse proxying."
+                  stack={["Next.js", "Python", "Nginx", "MySQL", "Docker", "FastAPI"]}
                   images={[
                     {
                       src: "/portfolio/imgs/lightscatter_home_light.png",
@@ -140,13 +140,14 @@ export default function Home() {
               <div className="flex flex-col items-center gap-5 pt-10">
                 {getSkillRows(skills).map((row, rowIndex) => (
                   <div key={rowIndex} className="flex justify-center gap-2">
+                    
                     {row.map(({ name, icon }) => {
                       const Icon = icon;
 
                       return (
                         <div
                           key={name}
-                          className="group flex flex-col items-center gap-2 transition-transform hover:scale-[1.1] hover:text-main-accent bg-main-surface-secondary p-1 rounded-lg border-2 border-main-accent-bright"
+                          className="group flex flex-col items-center gap-2 cursor-pointer transition-transform hover:scale-[1.5] hover:text-main-accent bg-main-surface-secondary p-1 rounded-lg border-2 border-main-accent-bright"
                           title={name}
                         >
                           {typeof Icon === "function" ? (

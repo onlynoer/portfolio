@@ -11,7 +11,7 @@ import InteractiveBackground from "@/components/interactiveBackground";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Portfolio - Onlynoer",
   description: "Portfolio of Noe Rios, a software engineer and game developer. This site contains information about my projects, skills, and experience.",
   icons: "/portfolio/icon.svg", //icon.png as img/logo.svg doesnt work for this
   keywords: [
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   ],
   authors: [{name: "Noe Rios", url: "https://onlynoer.github.io/portfolio"}],
   openGraph: {
-    title: "Portfolio",
+    title: "Portfolio - Onlynoer",
     description: "Portfolio of Noe Rios, a software engineer and game developer. This site contains information about my projects, skills, and experience.",
     url: "https://onlynoer.github.io/portfolio",
     type: "website",

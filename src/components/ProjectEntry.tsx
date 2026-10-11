@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { SocialIcon } from "react-social-icons";
 import { useState } from "react";
+import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 
 interface ProjectImage {
   src: string;
@@ -64,7 +65,7 @@ export function ProjectEntry({
               aria-label="Show previous image"
               className="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer rounded-full border border-main-primary bg-main-bg/80 px-3 py-2 text-xl leading-none text-main-text hover:border-main-secondary"
             >
-              <span aria-hidden="true">&#8592;</span>
+              <span aria-hidden="true"><FaLongArrowAltLeft /></span>
             </button>
             <button
               type="button"
@@ -72,7 +73,7 @@ export function ProjectEntry({
               aria-label="Show next image"
               className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer rounded-full border border-main-primary bg-main-bg/80 px-3 py-2 text-xl leading-none text-main-text hover:border-main-secondary"
             >
-              <span aria-hidden="true">&#8594;</span>
+              <span aria-hidden="true"><FaLongArrowAltRight /></span>
             </button>
             <div className="absolute inset-x-0 bottom-3 flex justify-center gap-2">
               {images.map((image, index) => (

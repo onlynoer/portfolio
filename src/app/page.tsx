@@ -136,7 +136,7 @@ export default function Home() {
               </div>
             </Heading>
 
-            <Heading data={{preHeading: "Toolkits", heading: "Skills", subText: ""}} className="text-center pt-10" id="Skills">
+            <Heading data={{preHeading: "Toolkits", heading: "Skills", subText: ""}} className="text-center pt-10" contentClassName="pl-0" id="Skills">
               <div className="flex flex-col items-center gap-5 pt-10">
                 {getSkillRows(skills).map((row, rowIndex) => (
                   <div key={rowIndex} className="flex justify-center gap-2">

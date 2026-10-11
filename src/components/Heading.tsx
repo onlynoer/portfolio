@@ -8,10 +8,11 @@ interface HeadingrProps {
     },
     id?: string;
     className?: string;
+    contentClassName?: string;
     children?: React.ReactNode;
 }
 
-export function Heading({data, className, children, id}: Readonly<HeadingrProps>) {
+export function Heading({data, className, contentClassName, children, id}: Readonly<HeadingrProps>) {
     if(!data) return null;
     const {preHeading, heading, subText} = data;
   return (
@@ -30,10 +31,9 @@ export function Heading({data, className, children, id}: Readonly<HeadingrProps>
             </h3>
         )}
 
-        <section className="pl-5 text-main-text font-normal">
+        <section className={`${contentClassName ?? "pl-5"} text-main-text font-normal`}>
             {children}
         </section>
     </section>
   );
 }
-

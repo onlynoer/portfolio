@@ -40,12 +40,12 @@ export function Hero() {
 
           <div className="flex flex-col items-start space-y-3"> {/*sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row */}
             <Link
-              href="/#projects"
+              href="/#skills"
               target="_self"
               rel="noopener"
               className="px-8 py-4 text-lg font-medium text-center text-main-other-text bg-main-bg-secondary hover:shadow-md hover:text-main-secondary rounded-md"
             >
-              view my work
+              view my skills
             </Link>
             {/* Social/Contact Icons Should go under view my work*/}
 

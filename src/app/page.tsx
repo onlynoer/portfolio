@@ -81,6 +81,7 @@ export default function Home() {
           <section>
             {/* <Heading data={headingData}>
             </Heading> */}
+
             {/* <Heading data={{preHeading: "Info", heading: "Site in development!", subText: ""}} className="text-center" /> */}
 
             <Heading data={projectsData} className="text-center" id="projects">
